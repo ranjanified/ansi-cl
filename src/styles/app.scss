@@ -1,0 +1,66 @@
+// Import the mixins for @material/typography.
+@use '@material/typography/mdc-typography';
+@use '@material/typography/index' as typography;
+
+//
+// MDC Elevation Classes
+//
+@use '@material/elevation/mdc-elevation';
+
+@use '@material/circular-progress/mixins' as circular-progress;
+@use '@material/theme/color-palette';
+
+code,
+pre {
+  font-family: 'Roboto Mono', monospace;
+}
+
+small {
+  font-size: 0.9em;
+}
+
+big {
+  font-size: 1.1em;
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+.full-page {
+  min-height: 100vh;
+}
+
+.col-flexed {
+  display: flex;
+  flex-direction: column
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  margin: 4px 0;
+}
+
+.navigation-container{
+  width: 20%
+}
+
+
+.circular-progress-colors {
+  @include circular-progress.indeterminate-colors(
+    color-palette.$green-500 color-palette.$yellow-500 color-palette.$red-500
+      color-palette.$blue-500
+  );
+}
+
+.content-container {
+  display: flex;;
+  flex: 1;
+  margin-left: 4px;
+}
+
+.content-presenter {
+  flex: 1
+}
