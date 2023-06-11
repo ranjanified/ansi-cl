@@ -2,13 +2,13 @@
   import Paper from "@smui/paper";
   import Header from "$lib/header/Header.svelte";
   import Footer from "$lib/footer/Footer.svelte";
-  import Navigation from "$lib/navigation/Navigation.svelte";
+  import TableOfContent from "$lib/toc/TableOfContent.svelte";
 </script>
 
 <Paper class="full-page col-flexed">
   <Header />
-  <Paper class="main-content" elevation={5}>
-    <Navigation />
+  <Paper class="main-content drawer-container" elevation={5}>
+    <TableOfContent />
     <Paper elevation={5} class="content-container">
       <main class="container-main">
         <slot />

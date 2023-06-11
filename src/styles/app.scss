@@ -43,20 +43,40 @@ strong {
   margin: 4px 0;
 }
 
-.navigation-container{
-  width: 20%
+.navigation-container {
+  width: 20%;
+}
+
+.drawer-container {
+  position: relative;
+  padding-top: 0;
+  border: 1px solid
+    var(--mdc-theme-text-hint-on-background, rgba(0, 0, 0, 0.1));
+  overflow: hidden;
+  z-index: 0;
+}
+
+.navigation-container.navigation-opened {
+  width: 30%;
+  height: 100%;
+  overflow-y: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.navigation-opened {
+  position: relative;
 }
 
 
 .circular-progress-colors {
-  @include circular-progress.indeterminate-colors(
-    color-palette.$green-500 color-palette.$yellow-500 color-palette.$red-500
-      color-palette.$blue-500
-  );
+  @include circular-progress.indeterminate-colors(color-palette.$green-500 color-palette.$yellow-500 color-palette.$red-500 color-palette.$blue-500 );
 }
 
 .content-container {
-  display: flex;;
+  display: flex;
+  ;
   flex: 1;
   margin-left: 4px;
 }
