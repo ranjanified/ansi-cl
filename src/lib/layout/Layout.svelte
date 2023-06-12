@@ -2,7 +2,7 @@
   import Paper from "@smui/paper";
   import Header from "$lib/header/Header.svelte";
   import Footer from "$lib/footer/Footer.svelte";
-  import TableOfContent from "$lib/toc/TableOfContent.svelte";
+  import TableOfContent from "$lib/toc/ToCNavigation.svelte";
 </script>
 
 <Paper class="full-page col-flexed">
@@ -15,7 +15,9 @@
       </main>
     </Paper>
   </Paper>
-  <Footer />
+  <Footer>
+    <slot name="footer" />
+  </Footer>
 </Paper>
 
 <style lang="scss">
