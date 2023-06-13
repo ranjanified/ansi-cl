@@ -1,31 +1,31 @@
-import Syntax from "$lib/pages/syntax/Syntax.svelte";
-import Introduction from "$lib/pages/intro/Introduction.svelte";
-import Home from "$lib/home/Home.svelte";
+import HomeContent from "$lib/home/Home.svelte";
 import NotFound from "$lib/not-found/NotFound.svelte";
+import FilesContent from "$lib/pages/files/FilesContent.svelte";
+import SyntaxContent from "$lib/pages/syntax/SyntaxContent.svelte";
+import ConsesContent from "$lib/pages/conses/ConsesContent.svelte";
+import ArraysContent from "$lib/pages/arrays/ArraysContent.svelte";
+import ReaderContent from "$lib/pages/reader/ReaderContent.svelte";
 import ObjectsContent from "$lib/pages/objects/ObjectsContent.svelte";
-import IterationContent from "$lib/pages/iteration/IterationContent.svelte";
-import TypesAndClassesContent from "$lib/pages/types-and-classes/TypesAndClassesContent.svelte";
-import DataAndControlFlowContent from "$lib/pages/data-and-control/DataAndControlFlowContent.svelte";
 import SymbolsContent from "$lib/pages/symbols/SymbolsContent.svelte";
-import PackagesContent from "$lib/pages/packages/PackagesContent.svelte";
 import NumbersContent from "$lib/pages/numbers/NumbersContent.svelte";
 import StringsContent from "$lib/pages/strings/StringsContent.svelte";
 import StreamsContent from "$lib/pages/streams/StreamsContent.svelte";
-import SysConstructionContent from "$lib/pages/sys-construction/SysConstructionContent.svelte";
+import PrinterContent from "$lib/pages/printer/PrinterContent.svelte";
+import PackagesContent from "$lib/pages/packages/PackagesContent.svelte";
 import GlossaryContent from "$lib/pages/glossary/GlossaryContent.svelte";
-import HashTablesContent from "$lib/pages/hash-tables/HashTablesContent.svelte";
+import IterationContent from "$lib/pages/iteration/IterationContent.svelte";
+import SequencesContent from "$lib/pages/sequences/SequencesContent.svelte";
+import FileNamesContent from "$lib/pages/file-names/FileNamesContent.svelte";
+import IntroductionContent from "$lib/pages/intro/IntroductionContent.svelte";
 import ConditionsContent from "$lib/pages/conditions/ConditionsContent.svelte";
 import StructuresContent from "$lib/pages/structures/StructuresContent.svelte";
 import CharactersContent from "$lib/pages/characters/CharactersContent.svelte";
-import ConsesContent from "$lib/pages/conses/ConsesContent.svelte";
-import ArraysContent from "$lib/pages/arrays/ArraysContent.svelte";
-import SequencesContent from "$lib/pages/sequences/SequencesContent.svelte";
-import FileNamesContent from "$lib/pages/file-names/FileNamesContent.svelte";
-import FilesContent from "$lib/pages/files/FilesContent.svelte";
-import PrinterContent from "$lib/pages/printer/PrinterContent.svelte";
-import ReaderContent from "$lib/pages/reader/ReaderContent.svelte";
+import HashTablesContent from "$lib/pages/hash-tables/HashTablesContent.svelte";
 import EnvironmentContent from "$lib/pages/environment/EnvironmentContent.svelte";
 import EvalAndCompileContent from "$lib/pages/eval-and-compile/EvalAndCompileContent.svelte";
+import SysConstructionContent from "$lib/pages/sys-construction/SysConstructionContent.svelte";
+import TypesAndClassesContent from "$lib/pages/types-and-classes/TypesAndClassesContent.svelte";
+import DataAndControlFlowContent from "$lib/pages/data-and-control/DataAndControlFlowContent.svelte";
 
 export const component_consts = {
     appendix: 'appendix',
@@ -57,13 +57,13 @@ export const component_consts = {
     sys_construction: 'sys-construction',
     environment: 'environment',
     glossary: 'glossary',
-    404: 'glossary'
+    404: 'not-found'
 }
 
 export const component_map = {
-    [component_consts.home]: Home,
-    [component_consts.intro]: Introduction,
-    [component_consts.syntax]: Syntax,
+    [component_consts.home]: HomeContent,
+    [component_consts.intro]: IntroductionContent,
+    [component_consts.syntax]: SyntaxContent,
     [component_consts.eval_and_compile]: EvalAndCompileContent,
     [component_consts.types_and_classes]: TypesAndClassesContent,
     [component_consts.data_and_control_flow]: DataAndControlFlowContent,

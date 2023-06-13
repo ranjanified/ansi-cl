@@ -1,23 +1,17 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  // import { onMount } from "svelte";
   import Separator from "@smui/list";
   import List, { Item, Text } from "@smui/list";
   import { app_store } from "$lib/store/app_store";
-  import Syntax from "$lib/pages/syntax/Syntax.svelte";
-  import Introduction from "$lib/pages/intro/Introduction.svelte";
+  import { component_consts } from "$lib/store/comp_map";
+  import Syntax from "$lib/pages/syntax/SyntaxContent.svelte";
+  import Introduction from "$lib/pages/intro/IntroductionContent.svelte";
   import Drawer, { Header, Content, Title, Scrim } from "@smui/drawer";
-  import { component_consts, component_map } from "$lib/store/comp_map";
 
   export let active_navigation = app_store.active_navigation;
 
   const menu_open = app_store.menu_open;
   let content_presenter = app_store.content_presenter;
-
-  onMount(() => {
-    if (!$active_navigation) {
-      $active_navigation = component_consts.intro;
-    }
-  });
 </script>
 
 <Drawer variant="modal" fixed={false} bind:open={$menu_open}>
