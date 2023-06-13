@@ -3,7 +3,7 @@ import { Writable, writable } from "svelte/store";
 
 const app_store = {
     menu_open: writable(false),
-    active_navigation: writable(''),
+    active_navigation: writable('home'),
     content_presenter: writable() as Writable<{ display_content(comp: typeof SvelteComponent): void}>
 }
 

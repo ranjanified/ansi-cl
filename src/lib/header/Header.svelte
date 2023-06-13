@@ -5,7 +5,7 @@
   import { app_store } from "$lib/store/app_store";
 
   const menu_open = app_store.menu_open;
-  // let initialOff = false;
+  const active_navigation = app_store.active_navigation;
 </script>
 
 <header>
@@ -22,10 +22,7 @@
             <Icon class="material-icons" on>close</Icon>
             <Icon class="material-icons">menu</Icon>
           </IconButton>
-          <!-- {#if !$menu_open}
-          {:else}
-            <IconButton class="material-icons" on:click={() => $menu_open = !$menu_open}>close</IconButton>
-          {/if} -->
+          <IconButton class="material-icons" on:click={() => $active_navigation = 'home'}>home</IconButton>
         </Section>
         <Section>
           <slot name="header" />

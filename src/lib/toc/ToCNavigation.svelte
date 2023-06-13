@@ -1,14 +1,12 @@
 <script lang="ts">
-  import { getContext, onMount } from "svelte";
+  import { onMount } from "svelte";
   import Separator from "@smui/list";
   import List, { Item, Text } from "@smui/list";
   import { app_store } from "$lib/store/app_store";
+  import Syntax from "$lib/pages/syntax/Syntax.svelte";
   import Introduction from "$lib/pages/intro/Introduction.svelte";
   import Drawer, { Header, Content, Title, Scrim } from "@smui/drawer";
-  import ContentPresenter from "$lib/presenter/ContentPresenter.svelte";
-  import Syntax from "$lib/pages/syntax/Syntax.svelte";
-  import type { Writable } from "svelte/store";
-  import { component_map } from "$lib/store/comp_map";
+  import { component_consts, component_map } from "$lib/store/comp_map";
 
   export let active_navigation = app_store.active_navigation;
 
@@ -17,15 +15,9 @@
 
   onMount(() => {
     if (!$active_navigation) {
-      $active_navigation = "intro";
+      $active_navigation = component_consts.intro;
     }
   });
-
-  content_presenter.subscribe((presenter) => {
-    if(presenter && $active_navigation) {
-        presenter.display_content(component_map[$active_navigation]);
-    }
-  })
 </script>
 
 <Drawer variant="modal" fixed={false} bind:open={$menu_open}>
@@ -36,9 +28,9 @@
   <Content>
     <List>
       <Item
-        activated={$active_navigation === "intro"}
+        activated={$active_navigation === component_consts.intro}
         on:click={() => (
-          ($active_navigation = "intro"),
+          ($active_navigation = component_consts.intro),
           $content_presenter?.display_content(Introduction)
         )}
       >
@@ -46,9 +38,9 @@
       </Item>
 
       <Item
-        activated={$active_navigation === "syntax"}
+        activated={$active_navigation === component_consts.syntax}
         on:click={() => (
-          ($active_navigation = "syntax"),
+          ($active_navigation = component_consts.syntax),
           $content_presenter?.display_content(Syntax)
         )}
       >
@@ -56,169 +48,169 @@
       </Item>
 
       <Item
-        activated={$active_navigation === "eval&compile"}
-        on:click={() => ($active_navigation = "eval&compile")}
+        activated={$active_navigation === component_consts.eval_and_compile}
+        on:click={() => ($active_navigation = component_consts.eval_and_compile)}
       >
         <Text>Evaluation and Compilation</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "types&classes"}
-        on:click={() => ($active_navigation = "types&classes")}
+        activated={$active_navigation === component_consts.types_and_classes}
+        on:click={() => ($active_navigation = component_consts.types_and_classes)}
       >
         <Text>Types and Classes</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "d&cflow"}
-        on:click={() => ($active_navigation = "d&cflow")}
+        activated={$active_navigation === component_consts.data_and_control_flow}
+        on:click={() => ($active_navigation = component_consts.data_and_control_flow)}
       >
         <Text>Data and Control Flow</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "iteration"}
-        on:click={() => ($active_navigation = "iteration")}
+        activated={$active_navigation === component_consts.iteration}
+        on:click={() => ($active_navigation = component_consts.iteration)}
       >
         <Text>Iteration</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "objects"}
-        on:click={() => ($active_navigation = "objects")}
+        activated={$active_navigation === component_consts.objects}
+        on:click={() => ($active_navigation = component_consts.objects)}
       >
         <Text>Objects</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "structures"}
-        on:click={() => ($active_navigation = "structures")}
+        activated={$active_navigation === component_consts.structures}
+        on:click={() => ($active_navigation = component_consts.structures)}
       >
         <Text>Structures</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "conditions"}
-        on:click={() => ($active_navigation = "conditions")}
+        activated={$active_navigation === component_consts.conditions}
+        on:click={() => ($active_navigation = component_consts.conditions)}
       >
         <Text>Conditions</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "symbols"}
-        on:click={() => ($active_navigation = "symbols")}
+        activated={$active_navigation === component_consts.symbols}
+        on:click={() => ($active_navigation = component_consts.symbols)}
       >
         <Text>Symbols</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "packages"}
-        on:click={() => ($active_navigation = "packages")}
+        activated={$active_navigation === component_consts.packages}
+        on:click={() => ($active_navigation = component_consts.packages)}
       >
         <Text>Packages</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "numbers"}
-        on:click={() => ($active_navigation = "numbers")}
+        activated={$active_navigation === component_consts.numbers}
+        on:click={() => ($active_navigation = component_consts.numbers)}
       >
         <Text>Numbers</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "characters"}
-        on:click={() => ($active_navigation = "characters")}
+        activated={$active_navigation === component_consts.characters}
+        on:click={() => ($active_navigation = component_consts.characters)}
       >
         <Text>Characters</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "conses"}
-        on:click={() => ($active_navigation = "conses")}
+        activated={$active_navigation === component_consts.conses}
+        on:click={() => ($active_navigation = component_consts.conses)}
       >
         <Text>Conses</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "arrays"}
-        on:click={() => ($active_navigation = "arrays")}
+        activated={$active_navigation === component_consts.arrays}
+        on:click={() => ($active_navigation = component_consts.arrays)}
       >
         <Text>Arrays</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "strings"}
-        on:click={() => ($active_navigation = "strings")}
+        activated={$active_navigation === component_consts.strings}
+        on:click={() => ($active_navigation = component_consts.strings)}
       >
         <Text>Strings</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "sequences"}
-        on:click={() => ($active_navigation = "sequences")}
+        activated={$active_navigation === component_consts.sequences}
+        on:click={() => ($active_navigation = component_consts.sequences)}
       >
         <Text>Sequences</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "hash-tables"}
-        on:click={() => ($active_navigation = "hash-tables")}
+        activated={$active_navigation === component_consts.hash_tables}
+        on:click={() => ($active_navigation = component_consts.hash_tables)}
       >
         <Text>Hash Tables</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "file-names"}
-        on:click={() => ($active_navigation = "file-names")}
+        activated={$active_navigation === component_consts.file_names}
+        on:click={() => ($active_navigation = component_consts.file_names)}
       >
         <Text>Filenames</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "files"}
-        on:click={() => ($active_navigation = "files")}
+        activated={$active_navigation === component_consts.files}
+        on:click={() => ($active_navigation = component_consts.files)}
       >
         <Text>Files</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "streams"}
-        on:click={() => ($active_navigation = "streams")}
+        activated={$active_navigation === component_consts.streams}
+        on:click={() => ($active_navigation = component_consts.streams)}
       >
         <Text>Streams</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "printer"}
-        on:click={() => ($active_navigation = "printer")}
+        activated={$active_navigation === component_consts.printer}
+        on:click={() => ($active_navigation = component_consts.printer)}
       >
         <Text>Printer</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "reader"}
-        on:click={() => ($active_navigation = "reader")}
+        activated={$active_navigation === component_consts.reader}
+        on:click={() => ($active_navigation = component_consts.reader)}
       >
         <Text>Reader</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "sys-construction"}
-        on:click={() => ($active_navigation = "sys-construction")}
+        activated={$active_navigation === component_consts.sys_construction}
+        on:click={() => ($active_navigation = component_consts.sys_construction)}
       >
         <Text>System Construction</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "env"}
-        on:click={() => ($active_navigation = "env")}
+        activated={$active_navigation === component_consts.environment}
+        on:click={() => ($active_navigation = component_consts.environment)}
       >
         <Text>Environment</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "glossary"}
-        on:click={() => ($active_navigation = "glossary")}
+        activated={$active_navigation === component_consts.glossary}
+        on:click={() => ($active_navigation = component_consts.glossary)}
       >
         <Text>Glossary</Text>
       </Item>
@@ -226,15 +218,15 @@
       <Separator />
 
       <Item
-        activated={$active_navigation === "appendix"}
-        on:click={() => ($active_navigation = "appendix")}
+        activated={$active_navigation === component_consts.appendix}
+        on:click={() => ($active_navigation = component_consts.appendix)}
       >
         <Text>Appendix</Text>
       </Item>
 
       <Item
-        activated={$active_navigation === "master-index"}
-        on:click={() => ($active_navigation = "master-index")}
+        activated={$active_navigation === component_consts.master_index}
+        on:click={() => ($active_navigation = component_consts.master_index)}
       >
         <Text>Master Index</Text>
       </Item>

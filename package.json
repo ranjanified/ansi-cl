@@ -1,13 +1,16 @@
 {
   "name": "ansi-cl",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
+    "clean": "rimraf dist/",
     "dev": "vite",
-    "build": "vite build",
+    "build": "pnpm clean && vite build",
     "preview": "vite preview",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "prepublish:deno": "pnpm build",
+    "publish:deno": "pnpm build & cd ./dist && deployctl deploy --project=ansi-cl --prod https://deno.land/std@0.191.0/http/file_server.ts"
   },
   "devDependencies": {
     "@material/elevation": "^14.0.0",
@@ -22,7 +25,9 @@
     "@smui/common": "7.0.0-beta.8",
     "@smui/data-table": "7.0.0-beta.8",
     "@smui/drawer": "7.0.0-beta.8",
+    "@smui/fab": "7.0.0-beta.8",
     "@smui/icon-button": "7.0.0-beta.8",
+    "@smui/layout-grid": "7.0.0-beta.8",
     "@smui/linear-progress": "7.0.0-beta.8",
     "@smui/list": "7.0.0-beta.8",
     "@smui/paper": "7.0.0-beta.8",
@@ -31,6 +36,7 @@
     "@smui/top-app-bar": "7.0.0-beta.8",
     "@sveltejs/vite-plugin-svelte": "^2.4.1",
     "@tsconfig/svelte": "^4.0.1",
+    "rimraf": "^5.0.1",
     "sass": "^1.62.1",
     "smui-theme": "7.0.0-beta.8",
     "svelte": "^3.59.1",
