@@ -26,6 +26,7 @@
     "@smui/data-table": "7.0.0-beta.8",
     "@smui/drawer": "7.0.0-beta.8",
     "@smui/fab": "7.0.0-beta.8",
+    "@smui/form-field": "7.0.0-beta.8",
     "@smui/icon-button": "7.0.0-beta.8",
     "@smui/layout-grid": "7.0.0-beta.8",
     "@smui/linear-progress": "7.0.0-beta.8",

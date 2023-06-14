@@ -1,8 +1,9 @@
 <script lang="ts">
   import Paper from "@smui/paper";
+  import { app_store } from "$lib/store/app_store";
   import IconButton, { Icon } from "@smui/icon-button";
   import TopAppBar, { Row, Section } from "@smui/top-app-bar";
-  import { app_store } from "$lib/store/app_store";
+  import LanguageSwitcher from "$lib/lang-selector/LanguageSwitcher.svelte";
 
   const menu_open = app_store.menu_open;
   const active_navigation = app_store.active_navigation;
@@ -26,6 +27,9 @@
         </Section>
         <Section>
           <slot name="header" />
+        </Section>
+        <Section align="end">
+          <LanguageSwitcher />
         </Section>
       </Row>
     </TopAppBar>

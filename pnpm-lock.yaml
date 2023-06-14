@@ -44,6 +44,9 @@ devDependencies:
   '@smui/fab':
     specifier: 7.0.0-beta.8
     version: 7.0.0-beta.8(svelte@3.59.1)(typescript@5.1.3)
+  '@smui/form-field':
+    specifier: 7.0.0-beta.8
+    version: 7.0.0-beta.8(svelte@3.59.1)(typescript@5.1.3)
   '@smui/icon-button':
     specifier: 7.0.0-beta.8
     version: 7.0.0-beta.8(svelte@3.59.1)(typescript@5.1.3)
@@ -541,6 +544,18 @@ packages:
       '@material/rtl': 14.0.0
     dev: true
 
+  /@material/form-field@14.0.0:
+    resolution: {integrity: sha512-k1GNBj6Sp8A7Xsn5lTMp5DkUkg60HX7YkQIRyFz1qCDCKJRWh/ou7Z45GMMgKmG3aF6LfjIavc7SjyCl8e5yVg==}
+    dependencies:
+      '@material/base': 14.0.0
+      '@material/feature-targeting': 14.0.0
+      '@material/ripple': 14.0.0
+      '@material/rtl': 14.0.0
+      '@material/theme': 14.0.0
+      '@material/typography': 14.0.0
+      tslib: 2.5.3
+    dev: true
+
   /@material/icon-button@14.0.0:
     resolution: {integrity: sha512-wHMqzm7Q/UwbWLoWv32Li1r2iVYxadIrwTNxT0+p+7NdfI3lEwMN3NoB0CvoJnHTljjXDzce0KJ3nZloa0P0gA==}
     dependencies:
@@ -943,6 +958,19 @@ packages:
     resolution: {integrity: sha512-FfIpdOV6Y0Up2kC88qb5uBsFI+vzsk5HNhhxILixCjYVGO1jfDOJF0MiQIu0PQFdGR6vBpmOHg5PSWy4TR5sTg==}
     dependencies:
       '@material/floating-label': 14.0.0
+      '@smui/common': 7.0.0-beta.8(svelte@3.59.1)(typescript@5.1.3)
+      svelte2tsx: 0.6.15(svelte@3.59.1)(typescript@5.1.3)
+    transitivePeerDependencies:
+      - svelte
+      - typescript
+    dev: true
+
+  /@smui/form-field@7.0.0-beta.8(svelte@3.59.1)(typescript@5.1.3):
+    resolution: {integrity: sha512-B+8QJulCY13qiWiwLn9Fso3ZzYLCRBpq6MHE0o/4ZI0g5tI4yzyU1YNSXA3zWg6FJx7XukqOqoOA2sNCd00cjA==}
+    dependencies:
+      '@material/feature-targeting': 14.0.0
+      '@material/form-field': 14.0.0
+      '@material/rtl': 14.0.0
       '@smui/common': 7.0.0-beta.8(svelte@3.59.1)(typescript@5.1.3)
       svelte2tsx: 0.6.15(svelte@3.59.1)(typescript@5.1.3)
     transitivePeerDependencies:

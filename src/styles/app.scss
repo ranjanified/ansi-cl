@@ -88,3 +88,11 @@ strong {
 .paragraph {
   margin: 8px 0;
 }
+
+.lang-switcher .lang-switch-action {
+  transform: rotate(90deg);
+}
+
+.capitalized {
+  text-transform: capitalize;
+}

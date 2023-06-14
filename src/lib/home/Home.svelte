@@ -3,45 +3,78 @@
   import { app_store } from "$lib/store/app_store";
   import LayoutGrid, { Cell } from "@smui/layout-grid";
   import { component_consts } from "$lib/store/comp_map";
+  import { get_replacement_text } from "$lib/store/text_dictionary";
 
   const active_navigation = app_store.active_navigation;
+  const selected_lang = app_store.selected_lang;
 </script>
 
 <LayoutGrid>
   <Cell>
-    <Button variant="unelevated" on:click={() => ($active_navigation = component_consts.intro)}
-      >Introduction</Button
+    <Button
+      variant="unelevated"
+      on:click={() => ($active_navigation = component_consts.intro)}
     >
+      {get_replacement_text("introduction", $selected_lang)}
+      <!-- {#if $selected_lang === "en"}
+        Introduction
+      {:else}
+        भूमिका
+      {/if} -->
+    </Button>
   </Cell>
 
   <Cell>
     <Button
       variant="unelevated"
-      on:click={() => ($active_navigation = component_consts.syntax)}>Syntax</Button
+      on:click={() => ($active_navigation = component_consts.syntax)}
     >
+      {get_replacement_text("syntax", $selected_lang)}
+      <!-- {#if $selected_lang === "en"}
+        Syntax
+      {:else}
+        वाक्य - विन्यास
+      {/if} -->
+    </Button>
   </Cell>
 
   <Cell>
     <Button
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.eval_and_compile)}
-      >Evaluation And Compilation</Button
     >
+      {get_replacement_text("evaluation", $selected_lang)}
+
+      {get_replacement_text("and", $selected_lang)}
+
+      {get_replacement_text("compilation", $selected_lang)}
+    </Button>
   </Cell>
+  <!-- Evaluation And Compilation -->
   <Cell>
     <Button
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.types_and_classes)}
-      >Types And Classes</Button
     >
+      {get_replacement_text("types", $selected_lang)}
+
+      {get_replacement_text("and", $selected_lang)}
+
+      {get_replacement_text("classes", $selected_lang)}
+    </Button>
   </Cell>
 
   <Cell>
     <Button
       variant="unelevated"
-      on:click={() => ($active_navigation = component_consts.data_and_control_flow)}
+      on:click={() =>
+        ($active_navigation = component_consts.data_and_control_flow)}
     >
-      Data And Control Flow
+      {get_replacement_text("data", $selected_lang)}
+
+      {get_replacement_text("and", $selected_lang)}
+
+      {get_replacement_text("control", $selected_lang)}
     </Button>
   </Cell>
 
@@ -50,7 +83,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.iteration)}
     >
-      Iteration
+      {#if $selected_lang === "en"}
+        Iteration
+      {:else}
+        आवर्तन
+      {/if}
     </Button>
   </Cell>
 
@@ -59,7 +96,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.objects)}
     >
-      Objects
+      {#if $selected_lang === "en"}
+        Objects
+      {:else}
+        वस्तु
+      {/if}
     </Button>
   </Cell>
 
@@ -68,7 +109,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.structures)}
     >
-      Structures
+      {#if $selected_lang === "en"}
+        Structures
+      {:else}
+        संरचनाएं
+      {/if}
     </Button>
   </Cell>
 
@@ -77,7 +122,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.conditions)}
     >
-      Conditions
+      {#if $selected_lang === "en"}
+        Conditions
+      {:else}
+        परिस्थितियाँ
+      {/if}
     </Button>
   </Cell>
 
@@ -86,7 +135,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.symbols)}
     >
-      Symbols
+      {#if $selected_lang === "en"}
+        Symbols
+      {:else}
+        प्रतीकें
+      {/if}
     </Button>
   </Cell>
 
@@ -95,7 +148,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.packages)}
     >
-      Packages
+      {#if $selected_lang === "en"}
+        Packages
+      {:else}
+        संकुल
+      {/if}
     </Button>
   </Cell>
 
@@ -104,7 +161,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.numbers)}
     >
-      Numbers
+      {#if $selected_lang === "en"}
+        Numbers
+      {:else}
+        संख्याऐं
+      {/if}
     </Button>
   </Cell>
 
@@ -113,7 +174,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.characters)}
     >
-      Characters
+      {#if $selected_lang === "en"}
+        Characters
+      {:else}
+        अक्षर
+      {/if}
     </Button>
   </Cell>
 
@@ -122,7 +187,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.conses)}
     >
-      Conses
+      {#if $selected_lang === "en"}
+        Conses
+      {:else}
+        पूर्वयोजन
+      {/if}
     </Button>
   </Cell>
 
@@ -131,7 +200,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.arrays)}
     >
-      Arrays
+      {#if $selected_lang === "en"}
+        Arrays
+      {:else}
+        त्रम
+      {/if}
     </Button>
   </Cell>
 
@@ -140,7 +213,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.strings)}
     >
-      Strings
+      {#if $selected_lang === "en"}
+        Strings
+      {:else}
+        अक्षर अनुक्रम
+      {/if}
     </Button>
   </Cell>
 
@@ -149,7 +226,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.sequences)}
     >
-      Sequences
+      {#if $selected_lang === "en"}
+        Sequences
+      {:else}
+        अनुक्रम
+      {/if}
     </Button>
   </Cell>
 
@@ -158,7 +239,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.hash_tables)}
     >
-      Hash Tables
+      {#if $selected_lang === "en"}
+        Hash Tables
+      {:else}
+        हैश तालिका
+      {/if}
     </Button>
   </Cell>
 
@@ -167,7 +252,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.file_names)}
     >
-      Filenames
+      {#if $selected_lang === "en"}
+        Filenames
+      {:else}
+        फ़ाइल उपनाम
+      {/if}
     </Button>
   </Cell>
 
@@ -176,7 +265,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.files)}
     >
-      Files
+      {#if $selected_lang === "en"}
+        Files
+      {:else}
+        फ़ाइल
+      {/if}
     </Button>
   </Cell>
 
@@ -185,7 +278,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.streams)}
     >
-      Streams
+      {#if $selected_lang === "en"}
+        Streams
+      {:else}
+        प्रवाह
+      {/if}
     </Button>
   </Cell>
 
@@ -194,7 +291,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.printer)}
     >
-      Printer
+      {#if $selected_lang === "en"}
+        Printer
+      {:else}
+        मुद्रक
+      {/if}
     </Button>
   </Cell>
 
@@ -203,7 +304,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.reader)}
     >
-      Reader
+      {#if $selected_lang === "en"}
+        Reader
+      {:else}
+        पाठक
+      {/if}
     </Button>
   </Cell>
 
@@ -212,7 +317,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.sys_construction)}
     >
-      System Construction
+      {#if $selected_lang === "en"}
+        System Construction
+      {:else}
+        तंत्र गठन
+      {/if}
     </Button>
   </Cell>
 
@@ -221,7 +330,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.environment)}
     >
-      Environment
+      {#if $selected_lang === "en"}
+        Environment
+      {:else}
+        परिवेश
+      {/if}
     </Button>
   </Cell>
 
@@ -230,7 +343,11 @@
       variant="unelevated"
       on:click={() => ($active_navigation = component_consts.glossary)}
     >
-      Glossary
+      {#if $selected_lang === "en"}
+        Glossary
+      {:else}
+        शब्दकोष
+      {/if}
     </Button>
   </Cell>
 </LayoutGrid>
